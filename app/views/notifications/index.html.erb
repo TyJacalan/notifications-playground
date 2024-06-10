@@ -1,0 +1,16 @@
+<% if @notifications.empty? %>
+    <p>No notifications to display</p>
+<% else %>
+    <%= turbo_stream_from "notifications_#{current_user.id}" %>
+    <%= turbo_frame_tag "notifications_#{current_user.id}" do %>
+        <ul>
+            <% @notifications.each do |notification| %>
+                <li>
+                    <div class='flex flex-col'>
+                        <%= notification.message %>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<%= turbo_frame_tag 'post_form' do %>
+  <%= form_with model: post do |form| %>
+
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.text_area :body %>
+    </div>
+
+    <%= form.hidden_field :post_id, value: params[:id] %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>

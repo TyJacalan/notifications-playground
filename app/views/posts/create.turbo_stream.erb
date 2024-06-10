@@ -1,0 +1,3 @@
+<%= turbo_stream.update 'toast', partial: 'layouts/toast' %>
+<%= turbo_stream.replace 'post_form', partial: 'form', locals: { post: Post.new } %>
+<%= turbo_stream.append 'posts', partial: 'post', locals: { post: @post } %>

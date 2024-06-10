@@ -1,0 +1,16 @@
+<div id="<%= dom_id post %>" class='h-fit w-full p-4 rounded-md bg-gray-100'>
+  <%= link_to post do %>
+    <div class='flex flex-row items-end gap-2'>
+      <h3 class='text-3xl'>
+        <%= post.title %>
+      </h3>
+      <p class='text-xs text-gray-400'>
+        <%= post.user.email %>
+      </p>
+    </div>
+
+    <p class='my-4'>
+      <%= post.body %>
+    </p>
+  <% end %>
+</div>

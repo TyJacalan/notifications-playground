@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="h-full w-full">
+  <head>
+    <title>NotificationsPlayground</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body class="h-full w-full min-h-screen max-w-screen overflow-x-hidden">
+    <%= render partial: 'layouts/toast' %>
+    <%= render partial: 'layouts/header' %>
+    
+    <div class='h-full w-full container mx-auto p-6 md:p-12'>
+      <%= yield %>
+    </div>
+  </body>
+</html>
